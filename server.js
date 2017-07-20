@@ -1,10 +1,17 @@
 /**
  * Created by kevin on 7/19/2017.
  */
-const cheerio = require('cheerio');
-const express = require('express');
-const request = require('request');
-const mongojs = require('mongojs');
+//For the scrape
+var cheerio = require('cheerio');
+var request = require('request');
+//Dependancies
+var express = require('express');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var mongoose = require('mongoose');
+//Require note and article models
+var note = require('./models/notes.js');
+var title = require('./models/titles.js');
 
 $ = require('cheerio');
 
