@@ -18,10 +18,10 @@ $ = require('cheerio');
 var url = 'http://store.steampowered.com/';
 
 request(url, function (error, response, body){
-    console.log(error,response,body);
-    console.log('statusCode:',response && response.statusCode);
-    console.log("body", body);
+    //console.log(error,response,body);
+    //console.log('statusCode:',response && response.statusCode);
+    //console.log("body", body);
 
     var $ =cheerio.load(body);
-    console.log($(''));
+    console.log($('.tab_item_name').text());
 });
