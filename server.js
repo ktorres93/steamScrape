@@ -16,5 +16,5 @@ request(url, function (error, response, body){
     console.log("body", body);
 
     var $ =cheerio.load(body);
-    console.log($('.tab_item_name text'));
+    console.log($(''));
 });
