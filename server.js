@@ -1,6 +1,11 @@
 /**
  * Created by kevin on 7/19/2017.
  */
+// Listen on port 3000
+app.listen(3000, function() {
+    console.log("Connected!");
+});
+
 //For the scrape
 var cheerio = require('cheerio');
 var request = require('request');
@@ -25,3 +30,4 @@ request(url, function (error, response, body){
     var $ =cheerio.load(body);
     console.log($('.tab_item_name').text());
 });
+
