@@ -2,9 +2,9 @@
  * Created by kevin on 7/19/2017.
  */
 // Listen on port 3000
-app.listen(3000, function() {
-    console.log("Connected!");
-});
+// app.listen(3000, function() {
+//     console.log("Connected!");
+// });
 
 //For the scrape
 var cheerio = require('cheerio');
@@ -30,4 +30,15 @@ request(url, function (error, response, body){
     var $ =cheerio.load(body);
     console.log($('.tab_item_name').text());
 });
+// Database configuration with mongoose
+mongoose.connect("mongodb://localhost/steamScrape");
+var db = mongoose.connection;
 
+// Show any mongoose errors
+db.on("error", function(error) {
+    console.log("Mongoose Error: ", error);
+});
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+    console.log("Mongoose connection successful.");
+});
