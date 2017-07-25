@@ -6,15 +6,14 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 //creates the title schema
-var titleSchema = new Schema({
-title:{
-   type: String,
-    required: true
-},
+var articleSchema = new Schema({
+title: {
+    type: String
+}
 
 });
 // Create the titles model with the ArticleSchema
-var Title = mongoose.model("titles", titleSchema);
+var Article = mongoose.model("article", articleSchema);
 
 // Export model
-module.exports = Title;
+module.exports = Article;
